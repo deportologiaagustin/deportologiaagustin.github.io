@@ -1,0 +1,115 @@
+/* Configuración general de la página inmersiva */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+/* Contenedor principal con la foto de fondo */
+.hero-background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('clinica deporte web.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Velo oscuro sutil (Overlay) para asegurar que la foto brille pero el texto sea legible */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(20, 20, 20, 0.45);
+    z-index: 1;
+}
+
+/* Contenido flotante central */
+.hero-contenido {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 680px;
+    padding: 0 24px;
+    color: #f7f4ee;
+}
+
+/* Título H1 elegante */
+.hero-titulo {
+    font-size: 38px;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+/* Breve bio / subtítulo */
+.hero-subtitulo {
+    font-size: 17px;
+    color: #e2dcd5;
+    margin-bottom: 36px;
+    line-height: 1.6;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-weight: 300;
+}
+
+/* Contenedor de botones */
+.contenedor-botones {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+/* Estilo de los botones minimalistas */
+.btn-minimal {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(50, 50, 50, 0.75);
+    color: #f7f4ee;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 12px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14.5px;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-weight: 500;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+}
+
+/* Efecto Hover: Pasa a blanco con texto oscuro */
+.btn-minimal:hover {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    border-color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* Ajustes para celulares */
+@media (max-width: 600px) {
+    .hero-titulo {
+        font-size: 28px;
+    }
+    .hero-subtitulo {
+        font-size: 15px;
+    }
+    .contenedor-botones {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .btn-minimal {
+        justify-content: center;
+    }
+}
